@@ -20,7 +20,7 @@ import models.UsuarioDAO;
  *
  * @author danig
  */
-@WebServlet(name = "Servlet", urlPatterns = {"/usuario"})
+@WebServlet(name = "Servlet", urlPatterns = {"/servletUsuario"})
 public class Servlet extends HttpServlet {
 
     IPersistencia sistPersistencia = new MysqlRepository();
@@ -61,7 +61,6 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         
        String accion = request.getParameter("accion");
        
@@ -75,8 +74,13 @@ public class Servlet extends HttpServlet {
                request.setAttribute("usuario", usuarios);
                // agregar una condicion de que quiero que pase una vez que me value el usuario
                request.getRequestDispatcher("Controlador?menu=formulario").forward(request, response);
-           } 
+           } else {
+               request.getRequestDispatcher("index.html").forward(request, response);
+           }
+       } else {
+           request.getRequestDispatcher("index.html").forward(request, response);
        }
+       
             // evaluar que pasa si no son correctos los datos
         
     }
