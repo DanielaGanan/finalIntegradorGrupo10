@@ -8,6 +8,7 @@ import infrastructure.persistence.ConexionBD;
 import infrastructure.persistence.IPersistencia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -26,23 +27,29 @@ public class MysqlRepository implements IPersistencia {
         conexion = ConexionBD.conexiones();
     }
 
-    
     @Override
     public void guardarUsuario(Usuario newUsuario) {
-        String query = "INSERT INTO usuarios_tortas (usuario, clave, direccion, piso_dpto, numero_telefono)VALUES (?,?,?,?,?)";
-    
+        String sql = "INSERT INTO usuarios_tortas (usuario, clave, direccion, piso_dpto, numero_telefono) VALUES (?,?,?,?,?)";
+
         try {
-            PreparedStatement ps = conexion.prepareStatement(query);
-            
+            PreparedStatement ps = conexion.prepareStatement(sql);
+
             ps.setString(1, newUsuario.getUsuario());
             ps.setString(2, newUsuario.getClave());
             ps.setString(3, newUsuario.getDireccion());
-            ps.setInt(4, newUsuario.getTelefono());
-            
-            ps.execute();
-            
+            ps.setString(4, newUsuario.getPisoDepto());
+            ps.setInt(5, newUsuario.getTelefono());
+
+            ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+
+            if (rs.next()) {
+                System.out.println("Dieta añadida con exito");
+            }
+            ps.close();
+
         } catch (SQLException ex) {
-            Logger.getLogger(MysqlRepository.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error al cargar el usuario en mysql");
         }
 
     }
@@ -66,7 +73,5 @@ public class MysqlRepository implements IPersistencia {
     public void borrar(String id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
-    
+
 }

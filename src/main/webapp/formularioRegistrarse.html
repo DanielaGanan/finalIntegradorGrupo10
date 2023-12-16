@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+</head>
+<body>
+    <h2>Formulario de Registro</h2>
+    <form action="registroServlet" method="POST">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="textusuario" required><br>
+
+        <label for="clave">Clave:</label>
+        <input type="password" id="clave" name="textclave" required><br>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="textdireccion" required><br>
+
+        <label for="pisoDepto">Piso/Depto:</label>
+        <input type="text" id="pisoDepto" name="textpisoDepto"><br>
+
+        <label for="telefono">Número de Teléfono:</label>
+        <input type="text" id="telefono" name="texttelefono" pattern="\d+" required><br>
+
+        <button type="submit" name="accion" value="registrarse">Registrarse</button>
+    </form>
+</body>
+</html>
