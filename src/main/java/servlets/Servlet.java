@@ -13,6 +13,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.Usuario;
+import models.UsuarioDAO;
 
 /**
  *
@@ -22,6 +24,8 @@ import javax.servlet.http.HttpServletResponse;
 public class Servlet extends HttpServlet {
 
     IPersistencia sistPersistencia = new MysqlRepository();
+    Usuario usuarios = new Usuario();
+    UsuarioDAO usuarioDAO = new UsuarioDAO();
     
     
     public Servlet() {
@@ -57,10 +61,23 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
-        //processRequest(request, response);
+        processRequest(request, response);
         
-        
+       String accion = request.getParameter("accion");
+       
+       if (accion.equalsIgnoreCase("ingresar")) {
+           String usuario = request.getParameter("textUsuario");
+           String clave = request.getParameter("textClave");
+           
+           usuarios = usuarioDAO.Validar(usuario, clave);
+           
+           if (usuarios.getUsuario() != null) {
+               request.setAttribute("usuario", usuarios);
+               // agregar una condicion de que quiero que pase una vez que me value el usuario
+               request.getRequestDispatcher("Controlador?menu=formulario").forward(request, response);
+           } 
+       }
+            // evaluar que pasa si no son correctos los datos
         
     }
 

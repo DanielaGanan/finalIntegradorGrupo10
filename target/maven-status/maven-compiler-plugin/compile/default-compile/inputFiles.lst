@@ -1,8 +1,12 @@
 C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\utils\Conexion.java
+C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\infrastructure\persistence\ConexionBD.java
 C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\mappers\UsuarioMapper.java
+C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\infrastructure\persistence\mysql\MysqlRepository.java
 C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\org\codoacodo\finalintegradorgrupo10\JakartaRestConfiguration.java
 C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\servlets\Servlet.java
 C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\models\Pedido.java
+C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\models\UsuarioDAO.java
 C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\org\codoacodo\finalintegradorgrupo10\resources\JakartaEE8Resource.java
+C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\infrastructure\persistence\IPersistencia.java
 C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\models\Producto.java
 C:\Users\danig\OneDrive\Documentos\NetBeansProjects\finalIntegradorGrupo10\src\main\java\models\Usuario.java

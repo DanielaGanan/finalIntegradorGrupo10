@@ -67,6 +67,15 @@ public class Usuario {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+    
     
     
     
