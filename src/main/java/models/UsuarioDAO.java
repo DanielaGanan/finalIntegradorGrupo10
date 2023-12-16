@@ -17,23 +17,23 @@ import java.util.logging.Logger;
  * @author danig
  */
 public class UsuarioDAO {
-    
+
     ConexionBD con = new ConexionBD();
     Connection cn;
     PreparedStatement ps;
     ResultSet rs;
     Usuario usuarios = new Usuario();
-    
-    public Usuario Validar (String usuario, String clave) {
-        
-       String sql = "SELECT * FROM usuarios_tortas WHERE usuario = ? AND clave = ?"; 
-       cn = con.conexiones();
-       
+
+    public Usuario Validar(String usuario, String clave) {
+
+        String sql = "SELECT * FROM usuarios_tortas WHERE usuario = ? AND clave = ?";
+        cn = con.conexiones();
+
         try {
             ps = cn.prepareStatement(sql);
             ps.setString(1, usuario);
             ps.setString(2, clave);
-            
+
             rs = ps.executeQuery();
             rs.next();
             do {
@@ -46,13 +46,18 @@ public class UsuarioDAO {
             } while (rs.next());
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            // Cierre de la conexión en el bloque finally
+            if (cn != null) {
+                try {
+                    cn.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
-       
-        return usuarios; 
+
+        return usuarios;
     }
-    
-    
-    
-    
-    
+
 }

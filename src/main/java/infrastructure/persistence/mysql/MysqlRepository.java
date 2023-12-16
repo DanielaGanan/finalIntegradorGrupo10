@@ -47,6 +47,7 @@ public class MysqlRepository implements IPersistencia {
                 System.out.println("Dieta añadida con exito");
             }
             ps.close();
+            conexion.close();
 
         } catch (SQLException ex) {
             System.out.println("Error al cargar el usuario en mysql");
