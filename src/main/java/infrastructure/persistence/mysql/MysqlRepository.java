@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,8 +33,7 @@ public class MysqlRepository implements IPersistencia {
         String sql = "INSERT INTO usuarios_tortas (usuario, clave, direccion, piso_dpto, numero_telefono) VALUES (?,?,?,?,?)";
 
         try {
-            PreparedStatement ps = conexion.prepareStatement(sql);
-
+            PreparedStatement ps = conexion.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, newUsuario.getUsuario());
             ps.setString(2, newUsuario.getClave());
             ps.setString(3, newUsuario.getDireccion());
@@ -44,7 +44,7 @@ public class MysqlRepository implements IPersistencia {
             ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) {
-                System.out.println("Dieta añadida con exito");
+                System.out.println("Se guardo con exito");
             }
             ps.close();
             conexion.close();
