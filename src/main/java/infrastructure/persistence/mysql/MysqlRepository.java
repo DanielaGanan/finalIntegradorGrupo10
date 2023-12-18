@@ -30,9 +30,9 @@ public class MysqlRepository implements IPersistencia {
 
     @Override
     public void guardarUsuario(Usuario newUsuario) {
-        String sql = "INSERT INTO usuarios_tortas (usuario, clave, direccion, piso_dpto, numero_telefono) VALUES (?,?,?,?,?)";
 
         try {
+            String sql = "INSERT INTO usuarios_tortas (usuario, clave, direccion, piso_dpto, numero_telefono) VALUES (?,?,?,?,?)";
             PreparedStatement ps = conexion.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, newUsuario.getUsuario());
             ps.setString(2, newUsuario.getClave());
@@ -47,7 +47,7 @@ public class MysqlRepository implements IPersistencia {
                 System.out.println("Se guardo con exito");
             }
             ps.close();
-            conexion.close();
+        //    conexion.close();
 
         } catch (SQLException ex) {
             System.out.println("Error al cargar el usuario en mysql");
