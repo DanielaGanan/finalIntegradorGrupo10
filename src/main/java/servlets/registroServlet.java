@@ -4,7 +4,8 @@
  */
 package servlets;
 
-import infrastructure.persistence.mysql.MysqlRepository;
+//import infrastructure.persistence.IPersistencia;
+//import infrastructure.persistence.mysql.MysqlRepository;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -24,7 +25,7 @@ public class registroServlet extends HttpServlet {
 
     Usuario usuarios = new Usuario();
     UsuarioDAO usuarioDAO = new UsuarioDAO();
-    MysqlRepository mysql = new MysqlRepository();
+//    IPersistencia sistPersistencia = new MysqlRepository();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -65,14 +66,22 @@ public class registroServlet extends HttpServlet {
          String accion = request.getParameter("accion");
        
        if (accion.equalsIgnoreCase("registrarse")) {
-           String usuario = request.getParameter("textUsuario");
-           String clave = request.getParameter("textClave");
+           
+           String usuario = request.getParameter("textusuario");
+           String clave = request.getParameter("textclave");
            String direccion = request.getParameter("textdireccion");
            String piso = request.getParameter("textpisoDepto");
            int telefono = Integer.parseInt(request.getParameter("texttelefono"));
+           
+           usuarios.setUsuario(usuario);
+           usuarios.setClave(clave);
+           usuarios.setDireccion(direccion);
+           usuarios.setPisoDepto(piso);
+           usuarios.setTelefono(telefono);
 
-           usuarios = new Usuario(usuario, clave, direccion, piso, telefono);
-           mysql.guardarUsuario(usuarios);
+        //   usuarios = new Usuario(usuario, clave, direccion, piso, telefono);
+          
+            usuarioDAO.guardarUsuarios(usuarios);
            
            // COLOCAR ALGO QUE VERIFIQUE CADA CAMPO SI ES CORRECTO O ESTA COMPLETO
            

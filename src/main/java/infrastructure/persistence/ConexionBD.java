@@ -16,6 +16,8 @@ import java.util.logging.Logger;
  */
 public class ConexionBD {
     
+    //HACER LA CONEXION CON LA DEPENDENCIA
+    
     public static Connection conexiones () {
     
         Connection conexion = null;
@@ -47,5 +49,8 @@ public class ConexionBD {
     
         return conexion;
     }
+    
+    
+    
     
 }

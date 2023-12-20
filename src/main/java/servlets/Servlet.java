@@ -4,8 +4,9 @@
  */
 package servlets;
 
-import infrastructure.persistence.IPersistencia;
-import infrastructure.persistence.mysql.MysqlRepository;
+//import infrastructure.persistence.IPersistencia;
+//import infrastructure.persistence.mysql.MysqlRepository;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -23,7 +24,7 @@ import models.UsuarioDAO;
 @WebServlet(name = "Servlet", urlPatterns = {"/servletUsuario"})
 public class Servlet extends HttpServlet {
 
-    IPersistencia sistPersistencia = new MysqlRepository();
+//    IPersistencia sistPersistencia = new MysqlRepository();
     Usuario usuarios = new Usuario();
     UsuarioDAO usuarioDAO = new UsuarioDAO();
     

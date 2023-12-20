@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,7 +21,7 @@ public class UsuarioDAO {
 
     ConexionBD con = new ConexionBD();
     Connection cn;
-    PreparedStatement ps;
+    PreparedStatement ps = null;
     ResultSet rs;
     Usuario usuarios = new Usuario();
 
@@ -50,6 +51,7 @@ public class UsuarioDAO {
             // Cierre de la conexión en el bloque finally
             if (cn != null) {
                 try {
+                    ps.close();
                     cn.close();
                 } catch (SQLException ex) {
                     Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -60,4 +62,36 @@ public class UsuarioDAO {
         return usuarios;
     }
 
+    public void guardarUsuarios(Usuario newUsuario) {
+
+        try {
+            String sql = "INSERT INTO usuarios_tortas (usuario, clave, direccion, piso_dpto, numero_telefono) VALUES (?,?,?,?,?)";
+
+            cn = con.conexiones();
+  
+        //    PreparedStatement ps = cn.prepareStatement(sql);
+        //    cn.prepareStatement(sql);
+        
+            PreparedStatement ps = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, newUsuario.getUsuario());
+            ps.setString(2, newUsuario.getClave());
+            ps.setString(3, newUsuario.getDireccion());
+            ps.setString(4, newUsuario.getPisoDepto());
+            ps.setInt(5, newUsuario.getTelefono());
+
+            ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+
+            if (rs.next()) {
+                System.out.println("Se guardo con exito");
+            }
+            ps.close();
+            cn.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error al cargar el usuario en mysql");
+        }
+
+    }
+    
 }
