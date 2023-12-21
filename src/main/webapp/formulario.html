@@ -10,7 +10,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <form action="/procesar_compra" method="post" id="formularioCompra">
+        <form action="compra" method="POST" id="formularioCompra">
             <label for="torta">Seleccione la torta:</label>
             <select id="torta" name="torta" required>
                 <option value="chocolate">Torta de Chocolate</option>
@@ -36,7 +36,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <input type="text" id="monto_total" name="monto_total" readonly>
 
             <button type="button" onclick="calcularMontoTotal()">Calcular Monto Total</button>
-            <button type="submit">Realizar Compra</button>
+            <button type="submit" name="accion" value="realizarCompra">Realizar Compra</button>
         </form>
     </body>
 </html>

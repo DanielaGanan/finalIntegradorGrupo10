@@ -88,7 +88,7 @@ public class registroServlet extends HttpServlet {
            // IMPRIMIR UN CARTEL UNA VEZ QUE SE HA INSERTADO
            
            request.getRequestDispatcher("index.html").forward(request, response);
-           
+//           
        }
     }
 

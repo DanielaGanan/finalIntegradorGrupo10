@@ -26,7 +26,7 @@ public class ConexionBD {
             String port = "3306";
             String username = "root";
             String password = "root";
-            String nombredb = "datos";
+            String nombredb = "datoss";
             String drive = "com.mysql.cj.jdbc.Driver";
             
         try {

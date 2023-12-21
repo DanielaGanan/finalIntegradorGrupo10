@@ -4,6 +4,8 @@
  */
 package models;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author danig
@@ -11,43 +13,33 @@ package models;
 public class Pedido {
     
     private int idPedido;
-    private int idUsuario; //En observación
-    private int idProducto; //En observación
-    private Producto producto;
+    //private int idUsuario; 
+    //private int idProducto;
     private Usuario usuario;
-    private int cantidad;
-    private double pagoTotal;
+    private Producto producto;
+    private int kilos;
+    private double precioTotal;
+    private LocalDate fecha;
 
     public Pedido() {
     }
 
-    // Analizar con cual contructor quedarse 
+    public Pedido(Usuario usuario, Producto producto, int kilos, double precioTotal, LocalDate fecha) {
+        this.usuario = usuario;
+        this.producto = producto;
+        this.kilos = kilos;
+        this.precioTotal = precioTotal;
+        this.fecha = fecha;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
     
-    public Pedido(int idPedido, Producto producto, Usuario usuario, int cantidad, double pagoTotal) {
-        this.idPedido = idPedido;
-        this.producto = producto;
-        this.usuario = usuario;
-        this.cantidad = cantidad;
-        this.pagoTotal = pagoTotal;
-    }
-
-    public Pedido(int idPedido, int idUsuario, int idProducto, Producto producto, Usuario usuario, int cantidad, double pagoTotal) {
-        this.idPedido = idPedido;
-        this.idUsuario = idUsuario;
-        this.idProducto = idProducto;
-        this.producto = producto;
-        this.usuario = usuario;
-        this.cantidad = cantidad;
-        this.pagoTotal = pagoTotal;
-    }
-
-    public Pedido(Producto producto, Usuario usuario, int cantidad, double pagoTotal) {
-        this.producto = producto;
-        this.usuario = usuario;
-        this.cantidad = cantidad;
-        this.pagoTotal = pagoTotal;
-    }
-
     public int getIdPedido() {
         return idPedido;
     }
@@ -56,28 +48,20 @@ public class Pedido {
         this.idPedido = idPedido;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public int getKilos() {
+        return kilos;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setKilos(int kilos) {
+        this.kilos = kilos;
     }
 
-    public int getIdProducto() {
-        return idProducto;
+    public double getPrecioTotal() {
+        return precioTotal;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
-    }
-
-    public Producto getProducto() {
-        return producto;
-    }
-
-    public void setProducto(Producto producto) {
-        this.producto = producto;
+    public void setPrecioTotal(double precioTotal) {
+        this.precioTotal = precioTotal;
     }
 
     public Usuario getUsuario() {
@@ -88,20 +72,12 @@ public class Pedido {
         this.usuario = usuario;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public double getPagoTotal() {
-        return pagoTotal;
-    }
-
-    public void setPagoTotal(double pagoTotal) {
-        this.pagoTotal = pagoTotal;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
     
     
