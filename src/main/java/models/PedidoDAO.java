@@ -21,24 +21,21 @@ public class PedidoDAO {
     Connection cn;
     PreparedStatement ps = null;
     ResultSet rs;
-    Usuario usuarios = new Usuario();
+//    Usuario usuarios = new Usuario();
     
     public void guardarPedido(Pedido pedido) {
 
         try {
-            String sql = "INSERT INTO pedidos (idProducto, id_usuario, kilos, precioTotal, fecha) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO pedidos (idProducto, id_usuario, kilos, precioTotal, fecha) VALUES (?,?,?,?,?)";
 
             cn = con.conexiones();
-  
-        //    PreparedStatement ps = cn.prepareStatement(sql);
-        //    cn.prepareStatement(sql);
         
             PreparedStatement ps = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, pedido.getProducto().getIdProducto());
             ps.setInt(2, pedido.getUsuario().getIdUsuario());
             ps.setInt(3, pedido.getKilos());
             ps.setDouble(4, pedido.getPrecioTotal());
-            ps.setDate(7, Date.valueOf(pedido.getFecha()));
+            ps.setDate(5, Date.valueOf(pedido.getFecha()));
 
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();

@@ -4,8 +4,6 @@
  */
 package servlets;
 
-//import infrastructure.persistence.IPersistencia;
-//import infrastructure.persistence.mysql.MysqlRepository;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -79,7 +77,6 @@ public class registroServlet extends HttpServlet {
            usuarios.setPisoDepto(piso);
            usuarios.setTelefono(telefono);
 
-        //   usuarios = new Usuario(usuario, clave, direccion, piso, telefono);
           
             usuarioDAO.guardarUsuarios(usuarios);
            

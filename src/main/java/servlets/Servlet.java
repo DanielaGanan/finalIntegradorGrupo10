@@ -4,15 +4,19 @@
  */
 package servlets;
 
-//import infrastructure.persistence.IPersistencia;
-//import infrastructure.persistence.mysql.MysqlRepository;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.Pedido;
+import models.PedidoDAO;
+import models.Producto;
+import models.ProductoDAO;
+import static models.ProductoDAO.reemplazarEspacio;
 import models.Usuario;
 import models.UsuarioDAO;
 
@@ -23,9 +27,12 @@ import models.UsuarioDAO;
 @WebServlet(name = "Servlet", urlPatterns = {"/servletUsuario"})
 public class Servlet extends HttpServlet {
 
-//    IPersistencia sistPersistencia = new MysqlRepository();
     Usuario usuarios = new Usuario();
     UsuarioDAO usuarioDAO = new UsuarioDAO();
+    Pedido pedido = new Pedido();
+    PedidoDAO pedidoDAO = new PedidoDAO();
+    Producto producto = new Producto();
+    ProductoDAO productoDAO = new ProductoDAO();
 
     public Servlet() {
     }
@@ -45,16 +52,39 @@ public class Servlet extends HttpServlet {
                 if (usuarios.getUsuario() != null) {
                     request.setAttribute("usuario", usuarios);
                     // agregar una condicion de que quiero que pase una vez que me value el usuario
-                    request.getRequestDispatcher("index.html").forward(request, response);
+                    request.getRequestDispatcher("formulario.html").forward(request, response);
                 } else {
                     request.getRequestDispatcher("index.html").forward(request, response);
                 }
                 break;
 
-//            case "comprar":
-            
-        }
+            case "realizarCompra":
 
+                String torta = request.getParameter("torta");
+                int kilos = Integer.parseInt(request.getParameter("kilos"));
+                double precio = Double.parseDouble(request.getParameter("monto_total"));
+                String fechaString = request.getParameter("fecha");
+                
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate fecha = LocalDate.parse(fechaString, formatter);
+
+                String tortaModificada = reemplazarEspacio(torta);
+                
+                producto = productoDAO.buscarProducto(tortaModificada);
+
+                pedido.setUsuario(usuarios);
+                pedido.setProducto(producto);
+                pedido.setKilos(kilos);
+                pedido.setPrecioTotal(precio);
+                pedido.setFecha(fecha);
+
+                pedidoDAO.guardarPedido(pedido);
+
+                // COLOCAR ALGO QUE VERIFIQUE CADA CAMPO SI ES CORRECTO O ESTA COMPLETO
+                // IMPRIMIR UN CARTEL UNA VEZ QUE SE HA INSERTADO
+                request.getRequestDispatcher("index.html").forward(request, response);
+                break;
+        }
     }
 
     @Override
@@ -70,26 +100,6 @@ public class Servlet extends HttpServlet {
             throws ServletException, IOException {
 
         processRequest(request, response);
-//       String accion = request.getParameter("accion");
-//       
-//       if (accion.equalsIgnoreCase("ingresar")) {
-//           String usuario = request.getParameter("textUsuario");
-//           String clave = request.getParameter("textClave");
-//           
-//           usuarios = usuarioDAO.Validar(usuario, clave);
-//           
-//           if (usuarios.getUsuario() != null) {
-//               request.setAttribute("usuario", usuarios);
-//               // agregar una condicion de que quiero que pase una vez que me value el usuario
-//               request.getRequestDispatcher("Controlador?menu=formulario").forward(request, response);
-//           } else {
-//               request.getRequestDispatcher("index.html").forward(request, response);
-//           }
-//       } else {
-//           request.getRequestDispatcher("index.html").forward(request, response);
-//       }
-//       
-//            // evaluar que pasa si no son correctos los datos
     }
 
     @Override
