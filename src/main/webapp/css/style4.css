@@ -254,6 +254,58 @@ header .flex .icons #menu-bars{
     opacity:0;
 }
 
+/* formulario */
+
+#formC {
+    display: flex;
+    justify-content: center;
+}
+
+#right-fom {
+    max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+    width: 100%;
+}
+
+#formularioCompra {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+#formularioCompra div {
+    margin-bottom: 1.5rem;
+}
+
+#formularioCompra label {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--chocolate);
+    margin-bottom: 0.5rem;
+}
+
+#formularioCompra select,
+#formularioCompra input,
+#formularioCompra button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.3rem;
+}
+
+#formularioCompra button {
+    background: var(--strawberry);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#formularioCompra button:hover {
+    background: var(--chocolate);
+}
+
 /* media queries  */
 
 @media (max-width:991px){
