@@ -1,34 +1,149 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Registro</title>
+    <title>Document</title>
+    <!-- link a font-awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- link a css  -->
+    <link rel="stylesheet" href="./css/style3.css">
+
 </head>
+
 <body>
-    <h2>Formulario de Registro</h2>
-    <form action="registroServlet" method="POST">
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="textusuario" required><br>
+    <header>
+        <section class="flex">
+    
+            <a href="index.html" class="logo"><i class="fa-solid fa-plate-wheat"></i>BairesCakes!</a>
+    
+            <nav class="navbar">
+                <a class="active" href="../../index.html #inicio">inicio</a>
+                <a href="index.html #nosotros">nosotros</a>
+                <a href="index.html #catalogo">catálogo</a>
+                <a href="index.html #staff">staff</a>
+                <a href="formulario.html">pedido</a>
+            </nav>
+        
+            <div class="icons">
+                <i class="fas fa-bars" id="menu-bars"></i>
+                <i class="fas fa-search" id="search-icon"></i>
+                <a href="login.html">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <a href="formulario.html" class="fas fa-shopping-cart"></a>
+            </div>
+        </section>
+    </header>
 
-        <label for="clave">Clave:</label>
-        <input type="password" id="clave" name="textclave" required><br>
+    <!-- botón buscador  -->
 
-        <label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="textdireccion" required><br>
-
-        <label for="pisoDepto">Piso/Depto:</label>
-        <input type="text" id="pisoDepto" name="textpisoDepto"><br>
-
-        <label for="telefono">Número de Teléfono:</label>
-        <input type="text" id="telefono" name="texttelefono" pattern="\d+" required><br>
-
-        <button type="submit" name="accion" value="registrarse">Registrarse</button>
+    <form action="" id="search-form">
+        <input type="search" placeholder="¿qué deseas buscar?" name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
     </form>
+
+    <div id="formR">
+
+        <section class="carrito" id="registro">
+    
+            <h3 class="sub-heading">¡Regístrate!</h3>
+            <h1 class="heading">Completa tus datos</h1>
+    
+            <form action="registroServlet" method="POST" class="registro-form">
+    
+                <div class="inputBox">
+                    <div class="input">
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" id="usuario" name="textusuario" required>
+                    </div>
+                    <div class="input">
+                        <label for="clave">Clave:</label>
+                        <input type="password" id="clave" name="textclave" required>
+                    </div>
+                    <div class="input">
+                        <label for="telefono">Número de Teléfono:</label>
+                        <input type="text" id="telefono" name="texttelefono" pattern="\d+" required>
+                    </div>
+                </div>
+    
+                <div class="inputBox">
+                    <div class="input">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" name="textdireccion" required>
+                    </div>
+                    <div class="input">
+                        <label for="pisoDepto">Piso/Depto:</label>
+                        <input type="text" id="pisoDepto" name="textpisoDepto">
+                    </div>
+                </div>
+    
+                <div class="inputBox">
+                    <div class="input">
+                        <label for="telefono">Número de Teléfono:</label>
+                        <input type="text" id="telefono" name="texttelefono" pattern="\d+" required>
+                    </div>
+                </div>
+    
+                <button type="submit" name="accion" value="registrarse" class="btn">Registrarse</button>
+    
+            </form>
+    
+        </section>
+    </div>
+
+    <!-- sección - footer  -->
+
+    <div class="container">
+
+        <section class="footer">
+
+            <div class="box-container">
+        
+                <div class="box">
+                    <h3>locaciones:</h3>
+                    <a href="#">almagro</a>
+                    <a href="#">belgrano</a>
+                    <a href="#">caballito</a>
+
+                </div>
+        
+                <div class="box">
+                    <h3>acceso directo</h3>
+                    <a href="#inicio">inicio</a>
+                    <a href="#destacada">destacada</a>
+                    <a href="#nosotros">nosotros</a>
+                    <a href="#catalogo">catálogo</a>
+                    <a href="#staff">staff</a>
+                    <a href="#carrito">pedido</a>
+                </div>
+        
+                <div class="box">
+                    <h3>información de contacto</h3>
+                    <a href="#">+54 11 234 5678</a>
+                    <a href="#">bairescakes@gmail.com</a>
+                    <a href="#">argentina, buenos aires - av. messi 123</a>
+                </div>
+        
+                <div class="box">
+                    <h3>nuestras</h3>
+                    <a href="#">instagram</a>
+                    <a href="#">facebook</a>
+                    <a href="#">linkedin</a>
+                </div>
+        
+            </div>
+        
+            <div class="credit">copyright @ 2023 ><span>codo a codo - fullstack java - comisión 23566 - grupo 10 
+                <br>
+                (Daniela Ailin Gañan, Gonzalo Mendez, Pablo Nicolás Tanno & Pilar Quinteros)</span> </div>
+        
+        </section>
+    </div>
+
+    <!-- link de javascript  -->
+    <script src="js/script.js"></script>  
 </body>
 </html>

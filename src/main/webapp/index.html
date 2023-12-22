@@ -1,19 +1,399 @@
 <!DOCTYPE html>
 <html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online de Tortas</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tienda de Tortas</title>
-        <!-- boxicons -->
-        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-        <!-- link a css -->
-        <link rel="stylesheet" href="./css/styles.css">
-    </head>
+    <!-- link a swiper de javascript (facilita la creación de carrouseles y galerías de imágenes interactivas)  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-    <body>
-        <!-- barra de navegación -->
+    <!-- link a font-awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- link a css  -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- link de javascript - carrito  -->
+<script src="./js/carrito.js"></script>
+</head>
+
+<body>
+    
+<header>
+    <section class="flex">
+
+        <a href="index.html" class="logo"><i class="fa-solid fa-plate-wheat"></i>BairesCakes!</a>
+
+        <nav class="navbar">
+            <a class="active" href="#inicio">inicio</a>
+            <a href="#nosotros">nosotros</a>
+            <a href="#catalogo">catálogo</a>
+            <a href="#staff">staff</a>
+        </nav>
+    
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="login.html">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <a href="formulario.html" class="fas fa-shopping-cart"></a>
+        </div>
+    </section>
+</header>
+
+<!-- botón buscador  -->
+
+<form action="" id="search-form">
+    <input type="search" placeholder="¿qué deseas buscar?" name="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+</form>
+
+<!-- sección - inicio - carrousel de swiper -->
+
+<div class="container">
+    <section class="inicio" id="inicio">
+        <div class="swiper inicio-slider">
+            <div class="swiper-wrapper">
+    
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>SÓLO POR HOY DESCUENTO 50%</span>
+                        <h3>balcarce</h3>
+                        <p>bizcochuelo clásico, crema chantilly, dulce de leche, merengue seco,
+                            deco merengue italiano con salsa de dulce de leche</p>
+                        <a href="formulario.html" class="btn">🛒</a>
+                    </div>
+                    <div class="image">
+                        <img src="./images/menu-1.png" alt="torta1">
+                    </div>
+                </div>
+    
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>SÓLO POR HOY DESCUENTO 50%</span>
+                        <h3>Chocotorta</h3>
+                        <p>bizcochuelo clasico, curd de limón, merengue seco,
+                            deco merengue italiano con salsa de arándanos</p>
+                        <a href="formulario.html" class="btn">🛒</a>
+                    </div>
+                    <div class="image">
+                        <img src="images/menu-2.png" alt="torta2">
+                    </div>
+                </div>
+    
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>SÓLO POR HOY DESCUENTO 50%</span>
+                        <h3>Chocolatosa</h3>
+                        <p>bizcocho húmedo de chocolate, relleno de crema choconucha y cubierta en crema de chocolate.</p>
+                        <a href="formulario.html" class="btn">🛒</a>
+                    </div>
+                    <div class="image">
+                        <img src="images/menu-3.png" alt="torta3">
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="swiper-pagination"></div>
+    
+        </div>
+    </section>
+</div>
+
+<!-- sección - nosotros (presentación tienda)  -->
+
+<div class="container">
+
+    <section class="nosotros" id="nosotros">
+
+        <h3 class="sub-heading">nosotros</h3>
+        <h1 class="heading"> 
+            ¿por qué elegirnos? 
+            <br>
+            ¡por lo que te ofrecemos! 
+            </h1>
+    
+        <div class="row">
+    
+            <div class="image">
+                <img src="images/about-img.png" alt="">
+            </div>
+    
+            <div class="content">
+                <h3>¡la mejor tienda de tortas que puedas conocer!</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sequi corrupti corporis quaerat voluptatem ipsam neque labore modi autem, saepe numquam quod reprehenderit rem? Tempora aut soluta odio corporis nihil!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, nemo. Sit porro illo eos cumque deleniti iste alias, eum natus.</p>
+                <div class="icons-container">
+                    <div class="icons">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>envío gratis</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>descuentos</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-headset"></i>
+                        <span>servicio 24hs</span>
+                    </div>
+                </div>
+                <a href="#" class="btn">+ información</a>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+<!-- sección - catálogo  -->
+
+<div class="container">
+
+    <section class="catalogo" id="catalogo">
+
+        <h3 class="sub-heading"> nuestras delicias </h3>
+        <h1 class="heading"> ¡especiales para estas fiestas! </h1>
+    
+        <div class="box-container">
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/menu-1.jpg" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <h3>Selva Negra</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
+                    <a href="formulario.html" class="btn">🛒</a>
+                    <span class="price">$12.99</span>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/menu-2.jpg" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <h3>Chocotorta 1</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
+                    <a href="formulario.html" class="btn">🛒</a>
+                    <span class="price">$12.99</span>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/menu-3.jpg" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <h3>Frutos Rojos 1</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
+                    <a href="formulario.html" class="btn">🛒</a>
+                    <span class="price">$12.99</span>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/menu-4.jpg" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <h3>Pavlova</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
+                    <a href="formulario.html" class="btn">🛒</a>
+                    <span class="price">$12.99</span>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/menu-5.jpg" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <h3>Chocotorta 2</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
+                    <a href="formulario.html" class="btn">🛒</a>
+                    <span class="price">$12.99</span>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/menu-6.jpg" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <h3>Frutos Rojos 2</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
+                    <a href="formulario.html" class="btn">🛒</a>
+                    <span class="price">$12.99</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- sección - staff  -->
+
+<div class="container">
+
+    <section class="staff" id="staff">
+
+        <h3 class="sub-heading">staff</h3>
+        <h1 class="heading">¡conozcanos!</h1>
+    
+        <div class="swiper staff-slider">
+    
+            <div class="swiper-wrapper">
+    
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/pic-1.png" alt="">
+                        <div class="user-info">
+                            <h3>daniela</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat consequuntur repellendus aperiam deserunt nihil, corporis fugit voluptatibus voluptate totam neque illo placeat eius quis laborum aspernatur quibusdam. Ipsum, magni.</p>
+                </div>
+    
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/pic-2.png" alt="">
+                        <div class="user-info">
+                            <h3>gonzalo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat consequuntur repellendus aperiam deserunt nihil, corporis fugit voluptatibus voluptate totam neque illo placeat eius quis laborum aspernatur quibusdam. Ipsum, magni.</p>
+                </div>
+    
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/pic-3.png" alt="">
+                        <div class="user-info">
+                            <h3>pablo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat consequuntur repellendus aperiam deserunt nihil, corporis fugit voluptatibus voluptate totam neque illo placeat eius quis laborum aspernatur quibusdam. Ipsum, magni.</p>
+                </div>
+    
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/pic-4.png" alt="">
+                        <div class="user-info">
+                            <h3>pilar</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat consequuntur repellendus aperiam deserunt nihil, corporis fugit voluptatibus voluptate totam neque illo placeat eius quis laborum aspernatur quibusdam. Ipsum, magni.</p>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+        </div>
+    </section>
+</div>
+
+
+<!-- sección - footer  -->
+
+<div class="container">
+
+    <section class="footer">
+
+        <div class="box-container">
+    
+            <div class="box">
+                <h3>locaciones:</h3>
+                <a href="#">almagro</a>
+                <a href="#">belgrano</a>
+                <a href="#">caballito</a>
+
+            </div>
+    
+            <div class="box">
+                <h3>acceso directo</h3>
+                <a href="#inicio">inicio</a>
+                <a href="#destacada">destacada</a>
+                <a href="#nosotros">nosotros</a>
+                <a href="#catalogo">catálogo</a>
+                <a href="#staff">staff</a>
+                <a href="#carrito">pedido</a>
+            </div>
+    
+            <div class="box">
+                <h3>información de contacto</h3>
+                <a href="#">+54 11 234 5678</a>
+                <a href="#">bairescakes@gmail.com</a>
+                <a href="#">argentina, buenos aires - av. messi 123</a>
+            </div>
+    
+            <div class="box">
+                <h3>nuestras</h3>
+                <a href="#">instagram</a>
+                <a href="#">facebook</a>
+                <a href="#">linkedin</a>
+            </div>
+        </div>
+        <div class="credit">copyright @ 2023 ><span>codo a codo - fullstack java - comisión 23566 - grupo 10 
+            <br>
+            (Daniela Ailin Gañan, Gonzalo Mendez, Pablo Nicolás Tanno & Pilar Quinteros)</span> </div>
+    
+    </section>
+</div>
+
+    <!-- link a swiper de javascript (facilita la creación de carrouseles y galerías de imágenes interactivas)  -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- link de javascript  -->
+<script src="./js/script.js"></script>
+
+</body>
+</html>
+
+        <!-- barra de navegación 
         <header>
             <a href="#" class="logo">BairesCakes 🎂</a>
             <div class="bx bx-menu" id="menu-icon"></div>
@@ -24,12 +404,12 @@
                 <li><a href="#menu">Catálogo</a></li>
                 <li><a href="#services">Servicios</a></li>
                 <li><a href="#contact">Contacto</a></li>
-                <!-- botón modo oscuro -->
-                <div class="bx bx-moon" id="modooscuro"></div>
-            </ul>
-        </header>
+        <!-- botón modo oscuro 
+        <div class="bx bx-moon" id="modooscuro"></div>
+    </ul> 
+</header> -->
 
-        <!-- sección > inicio -->
+        <!-- sección > inicio 
         <section class="home" id="home">
             <div class="home-text">
                 <h1>LA VIDA ES CORTA, COMPRATE UNA TORTA</h1>
@@ -39,10 +419,9 @@
             <div class="home-img">
                 <img src="/resources/images/" alt="tortadebanner.jpg">
             </div>
-        </section>
+        </section> -->
 
-        
-        <!-- Formulario de login -->
+        <!-- Formulario de login 
 
         <section> 
             <form action="servletUsuario" method="POST">
@@ -58,9 +437,9 @@
             <div class="register-link">
                 ¿No tienes una cuenta? <a href="./formularioRegistrarse.html">Registrarse</a>
             </div>
-        </section> 
+        </section>  -->
 
-        <!-- sección > nosotros -->
+        <!-- sección > nosotros 
         <section class="about" id="about">
             <div class="about-img">
                 <img src="/resources/images/" alt="algunafotorandom.jpg">
@@ -74,58 +453,58 @@
         </section>
         <!-- pude entrar jeje gonzalo -->
 
-        <!-- sección > catálogo -->
+        <!-- sección > catálogo 
         <section class="menu" id="menu">
             <div class="heading">
                 <span>Catálogo</span>
                 <h2>Selección de Tortas</h2>
             </div>
             <div class="menu-container">
-                <!-- caja 1 -->
-                <div class="box">
-                    <div class="box-img">
-                        <img src="/resources/images/" alt="TortaDeChocolate.jpg">
-                    </div>
-                    <h2>Torta de Chocolate</h2>
-                    <h3>Delicia Intensa</h3>
-                    <span>$1.549,99</span>
-                    <i class='bx bx-cart-alt'></i>
-                </div>
-                <!-- caja 2 -->
-                <div class="box">
-                    <div class="box-img">
-                        <img src="/resources/images/" alt="TortaDeFrutosRojos.jpg">
-                    </div>
-                    <h2>Torta de Frutos Rojos</h2>
-                    <h3>Dulce Tentación</h3>
-                    <span>$2.150,00</span>
-                    <i class='bx bx-cart-alt'></i>
-                </div>
-                <!-- caja 3 -->
-                <div class="box">
-                    <div class="box-img">
-                        <img src="/resources/images/" alt="Pavlova.jpg">
-                    </div>
-                    <h2>Pavlova</h2>
-                    <h3>Azucarado y Celestial</h3>
-                    <span>$1.700,00</span>
-                    <i class='bx bx-cart-alt'></i>
-                </div>
-                <!-- caja 4 -->
-                <div class="box">
-                    <div class="box-img">
-                        <img src="/resources/images/" alt="SelvaNegra.jpg">
-                    </div>
-                    <h2>Selva Negra</h2>
-                    <h3>Chocolate, Cerezas y Placer</h3>
-                    <span>$3.135,99</span>
-                    <i class='bx bx-cart-alt'></i>
-                </div>
+        <!-- caja 1 
+        <div class="box">
+            <div class="box-img">
+                <img src="/resources/images/" alt="TortaDeChocolate.jpg">
             </div>
-        </section>
+            <h2>Torta de Chocolate</h2>
+            <h3>Delicia Intensa</h3>
+            <span>$1.549,99</span>
+            <i class='bx bx-cart-alt'></i>
+        </div>
+        <!-- caja 2 
+        <div class="box">
+            <div class="box-img">
+                <img src="/resources/images/" alt="TortaDeFrutosRojos.jpg">
+            </div>
+            <h2>Torta de Frutos Rojos</h2>
+            <h3>Dulce Tentación</h3>
+            <span>$2.150,00</span>
+            <i class='bx bx-cart-alt'></i>
+        </div>
+        <!-- caja 3 
+        <div class="box">
+            <div class="box-img">
+                <img src="/resources/images/" alt="Pavlova.jpg">
+            </div>
+            <h2>Pavlova</h2>
+            <h3>Azucarado y Celestial</h3>
+            <span>$1.700,00</span>
+            <i class='bx bx-cart-alt'></i>
+        </div>
+        <!-- caja 4 
+        <div class="box">
+            <div class="box-img">
+                <img src="/resources/images/" alt="SelvaNegra.jpg">
+            </div>
+            <h2>Selva Negra</h2>
+            <h3>Chocolate, Cerezas y Placer</h3>
+            <span>$3.135,99</span>
+            <i class='bx bx-cart-alt'></i>
+        </div>
+    </div>
+</section>
 
 
-        <!-- servicios -->
+        <!-- servicios 
         <section class="services" id="services">
             <div class="heading">
                 <span>Servicios</span>
@@ -133,28 +512,28 @@
             </div>
 
             <div class="servives-container">
-                <!-- caja 1 -->
-                <div class="s-box">
-                    <img src="/resources/images/" alt="Ordenar.jpg">
-                    <h3>Tu Pedido</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit ea fugiat esse tempore ipsum temporibus.</p>
-                </div>
-                <!-- caja 2 -->
-                <div class="s-box">
-                    <img src="/resources/images/" alt="Envío.jpg">
-                    <h3>Envío</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit ea fugiat esse tempore ipsum temporibus.</p>
-                </div>
-                <!-- caja 3 -->
-                <div class="s-box">
-                    <img src="/resources/images/" alt="Entrega.jpg">
-                    <h3>Entregado</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit ea fugiat esse tempore ipsum temporibus.</p>
-                </div>
-            </div>
-        </section>
+        <!-- caja 1 
+        <div class="s-box">
+            <img src="/resources/images/" alt="Ordenar.jpg">
+            <h3>Tu Pedido</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit ea fugiat esse tempore ipsum temporibus.</p>
+        </div>
+        <!-- caja 2 
+        <div class="s-box">
+            <img src="/resources/images/" alt="Envío.jpg">
+            <h3>Envío</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit ea fugiat esse tempore ipsum temporibus.</p>
+        </div>
+        <!-- caja 3 
+        <div class="s-box">
+            <img src="/resources/images/" alt="Entrega.jpg">
+            <h3>Entregado</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit ea fugiat esse tempore ipsum temporibus.</p>
+        </div>
+    </div>
+</section>
 
-        <!-- conexión -->
+        <!-- conexión 
         <section class="connect">
             <div class="connect-text">
                 <span>¿Necesitas encargar alguna torta?</span>
@@ -163,7 +542,7 @@
             <a href="#" class="btn">Contáctanos</a>
         </section>
 
-        <!-- contacto -->
+        <!-- contacto 
         <section class="contact" id="contact">
             <div class="contact-box">
                 <h3>LA VIDA ES CORTA, COMPRATE UNA TORTA</h3>
@@ -200,14 +579,3 @@
             </div>
         </section>
 
-        <!-- derechos por copyright -->
-        <div class="copyright">
-            <p>&#169; BairesCakes, sitio web de la tienda de tortas. Hecho por GRUPO10 DE CAC 2023 - FULLSTACK JAVA. Todos los derechos reservados.</p>
-        </div>
-
-        <!-- animando el scroll -->
-        <script src="https://unpkg.com/scrollreveal"></script>
-        <!-- link a javascript -->
-        <script src="/assets/js/reset.js"></script>
-    </body>
-</html>

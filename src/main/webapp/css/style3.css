@@ -180,288 +180,63 @@ header .flex .icons #menu-bars{
     font-size: 5rem;
 }
 
-.inicio .inicio-slider .slide{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:2rem; 
-    padding-top: 9rem;
+#formR {
+    margin-top: 50px;
 }
 
-.inicio .inicio-slider .slide .content{
-    flex:1 1 45rem;
-}
-
-.inicio .inicio-slider .slide .image{
-    flex:1 1 45rem;
-}
-
-.inicio .inicio-slider .slide .image img{
-    width: 100%;
-}
-
-.inicio .inicio-slider .slide .content span{
-    color:var(--chocolate);
-    font-size: 2.5rem;
-}
-
-.inicio .inicio-slider .slide .content h3{
-    color:var(--strawberry);
-    font-size: 7rem;
-}
-
-.inicio .inicio-slider .slide .content p{
-    color:var(--light-color);
-    font-size: 2.2rem;
-    padding:.5rem 0;
-    line-height: 1.5;
-}
-
-.swiper-pagination-bullet-active{
-    background:var(--chocolate);
-}
-
-
-.nosotros .row{
-    display: flex;
-    flex-wrap: wrap;
-    gap:1.5rem;
-    align-items: center;
-}
-
-.nosotros .row .image{
-    flex:1 1 45rem;
-}
-
-.nosotros .row .image img{ 
-    width: 100%;
-}
-
-.nosotros .row .content{
-    flex:1 1 45rem;
-}
-
-.nosotros .row .content h3{
-    color:var(--strawberry);
-    font-size: 4rem;
-    padding:.5rem 0;
-}
-
-.nosotros .row .content p{
-    color:var(--light-color);
-    font-size: 1.5rem;
-    padding:.5rem 0;
-    line-height: 2;
-}
-
-.nosotros .row .content .icons-container{
-    display: flex;
-    gap:1rem;
-    flex-wrap: wrap;
-    padding:1rem 0;
-    margin-top: .5rem;
-}
-
-.nosotros .row .content .icons-container .icons{
-    background:#eee;
-    border-radius: .5rem;
-    border:.1rem solid rgba(0,0,0,.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:1rem;
-    flex:1 1 17rem;
-    padding:1.5rem 1rem;
-}
-
-.nosotros .row .content .icons-container .icons i{
-    font-size: 2.5rem;
-    color:var(--chocolate);
-}
-
-.nosotros .row .content .icons-container .icons span{
-    font-size: 1.5rem;
-    color:var(--strawberry);
-}
-
-.catalogo .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 35rem);
-    gap:1.5rem;
-    justify-content: center;
-}
-
-.catalogo .box-container .box{
-    background: #fff;
-    border:.1rem solid rgba(0,0,0,.2);
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);    
-}
-
-.catalogo .box-container .box .image{
-    height: 25rem;
-    width: 100%;
-    padding:1.5rem;
-    overflow: hidden;
-    position: relative;
-}
-
-.catalogo .box-container .box .image img{
-    height: 100%;
-    width: 100%;
-    border-radius: .5rem;
-    object-fit: cover;
-}
-
-.catalogo .box-container .box .image .fa-heart{
-    position: absolute;
-    top:2.5rem; right: 2.5rem;
-    height: 5rem;
-    width: 5rem;
-    line-height: 5rem;
-    text-align: center;
-    font-size: 2rem;
-    background: #fff;
-    border-radius: 50%;
-    color:var(--strawberry);
-}
-
-.catalogo .box-container .box .image .fa-heart:hover{
-    background-color: var(--chocolate);
-    color:#fff;
-}
-
-.catalogo .box-container .box .content{
-    padding:2rem;
-    padding-top: 0;
-}
-
-.catalogo .box-container .box .content .stars{
-    padding-bottom: 1rem;
-}
-
-.catalogo .box-container .box .content .stars i{
-    font-size: 1.7rem;
-    color:var(--chocolate);
-}
-
-.catalogo .box-container .box .content h3{
-    color:var(--strawberry);
-    font-size: 2.5rem;
-}
-
-.catalogo .box-container .box .content p{
-    color:var(--light-color);
-    font-size: 1.6rem;
-    padding:.5rem 0;
-    line-height: 1.5;
-}
-
-.catalogo .box-container .box .content .price{
-    color:var(--chocolate);
-    margin-left: 1rem;
-    font-size: 2.5rem;
-}
-
-.staff .slide{
-    padding:2rem;
-    box-shadow:var(--box-shadow);
-    border:.1rem solid rgba(0,0,0,.2);
-    border-radius: .5rem;
-    position: relative;    
-    margin-bottom: 4rem;
-}
-
-.staff .slide .fa-quote-right{
-    position: absolute;
-    top:2rem; right:2rem;
-    font-size: 6rem;
-    color:#ccc;
-}
-
-.staff .slide .user{
-    display: flex;
-    gap:1.5rem;
-    align-items: center;
-    padding-bottom: 1.5rem;
-}
-
-.staff .slide .user img{
-    height: 7rem;
-    width: 7rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.staff .slide .user h3{
-    color:var(--strawberry);
-    font-size: 2rem;
-    padding-bottom: .5rem;
-}
-
-.staff .slide .user i{
-    font-size: 1.3rem;
-    color:var(--chocolate);
-}
-
-.staff .slide p{
-    font-size: 1.5rem;
-    line-height: 1.8;
-    color:var(--light-color);
-}
-
-.staff form{
-    max-width:90rem;
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    border:.1rem solid rgba(0,0,0,.2);
-    background:#fff;
-    padding:1.5rem;
-    margin:0 auto;
-    padding-top: 1rem;
-}
-
-.carrito form .inputBox{
+.registro-form .inputBox {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.carrito form .inputBox .input{
-    width:49%;
+.registro-form .inputBox .input {
+    width: 49%;
 }
 
-.carrito form .inputBox .input span{
-    display:block;
-    padding:.5rem 0;
+.registro-form .inputBox .input label {
+    display: block;
+    padding: 0.5rem 0;
     font-size: 1.5rem;
-    color:var(--light-color);
+    color: var(--light-color);
 }
 
-.carrito form .inputBox .input input,
-.carrito form .inputBox .input textarea{
-    background:#eee;
-    border-radius: .5rem;
-    padding:1.4rem;
+.registro-form .inputBox .input input {
+    background: #eee;
+    border-radius: 0.5rem;
+    padding: 1.4rem;
     font-size: 1.8rem;
-    color:var(--strawberry);
+    color: var(--chocolate);
     text-transform: none;
     margin-bottom: 1rem;
-    width:100%;
+    width: 100%;
 }
 
-.carrito form .inputBox .input input:focus,
-.carrito form .inputBox .input textarea:focus{
-    border:.1rem solid var(--chocolate);
+.registro-form .inputBox .input input:focus {
+    border: 0.1rem solid var(--chocolate);
 }
 
-.carrito form .inputBox .input textarea{
-    height:20rem;
-    resize: none;
+.registro-form label {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    font-family: 'Nunito', sans-serif; 
 }
 
-.carrito form .btn{
+
+.registro-form .inputBox .input label {
+    color: var(--chocolate);
+}
+
+.registro-form .btn {
     margin-top: 0;
+}
+
+.footer {
+    position: relative;
+    margin-top: 10px;
+
 }
 
 .footer .box-container{
@@ -604,4 +379,3 @@ header .flex .icons #menu-bars{
     }
 
 }
-

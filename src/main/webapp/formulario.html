@@ -1,43 +1,148 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="./js/compra.js"></script>
-    </head>
-    <body>
-        <form action="servletUsuario" method="POST" id="formularioCompra">
-            <label for="torta">Seleccione la torta:</label>
-            <select id="torta" name="torta" required>
-                <option value="chocolate">Chocolate</option>
-                <option value="frutos_rojos">Frutos Rojos</option>
-                <option value="pavlova">Pavlova</option>
-                <option value="selva_negra">Selva Negra</option>
-            </select>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link a font-awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-            <label for="cantidad">Cantidad (en kilos):</label>
-            <input type="number" id="cantidad" name="kilos" min="1" required>
+    <!-- link a css  -->
+    <link rel="stylesheet" href="./css/style4.css">
+</head>
+<body>
+    <header>
+        <section class="flex">
+    
+            <a href="index.html" class="logo"><i class="fa-solid fa-plate-wheat"></i>BairesCakes!</a>
+    
+            <nav class="navbar">
+                <a class="active" href="index.html #inicio">inicio</a>
+                <a href="index.html #nosotros">nosotros</a>
+                <a href="index.html">catálogo</a>
+                <a href="index.html #staff">staff</a>
+            </nav>
+        
+            <div class="icons">
+                <i class="fas fa-bars" id="menu-bars"></i>
+                <i class="fas fa-search" id="search-icon"></i>
+                <a href="./login.html">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <a href="formulario.html" class="fas fa-shopping-cart"></a>
+            </div>
+        </section>
+    </header>
 
-            <label for="dia_entrega">Día de Entrega:</label>
-            <input type="date" id="dia_entrega" name="fecha" required>
+    <!-- botón buscador  -->
 
-            <label for="metodo_pago">Método de Pago:</label>
-            <select id="metodo_pago" name="metodo_pago" required>
-                <option value="tarjeta">Tarjeta de Crédito</option>
-                <option value="efectivo">Efectivo</option>
-                <option value="transferencia">Transferencia Bancaria</option>
-            </select>
+    <form action="" id="search-form">
+        <input type="search" placeholder="¿qué deseas buscar?" name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
 
-            <label for="monto_total">Monto Total:</label>
-            <input type="text" id="monto_total" name="monto_total" readonly>
-            
-            <button type="button" onclick="calcularMontoTotal()">Calcular Monto Total</button>
-            <button type="submit" name="accion" value="realizarCompra">Realizar Compra</button>
-        </form>
-    </body>
+    
+    <div id="formC">
+        <section id="right-fom">
+            <div>
+                <form action="servletUsuario" method="POST" id="formularioCompra">
+                    <div>
+                        <label for="torta">Seleccione la torta:</label>
+                    <select id="torta" name="torta" required>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="frutos_rojos">Frutos Rojos</option>
+                        <option value="pavlova">Pavlova</option>
+                        <option value="selva_negra">Selva Negra</option>
+                    </select>    
+                    </div>
+                    <div>
+                        <label for="cantidad">Cantidad (en kilos):</label>
+                        <input type="number" id="cantidad" name="kilos" min="1" required>
+                    </div>
+    
+                    <div>
+                        <label for="dia_entrega">Día de Entrega:</label>
+                        <input type="date" id="dia_entrega" name="fecha" required>   
+                    </div>
+                    <div>
+                        <label for="metodo_pago">Método de Pago:</label>
+                        <select id="metodo_pago" name="metodo_pago" required>
+                            <option value="tarjeta">Tarjeta de Crédito</option>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="transferencia">Transferencia Bancaria</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="metodo_pago">Método de Pago:</label>
+                        <select id="metodo_pago" name="metodo_pago" required>
+                            <option value="tarjeta">Tarjeta de Crédito</option>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="transferencia">Transferencia Bancaria</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="monto_total">Monto Total:</label>
+                        <input type="text" id="monto_total" name="monto_total" readonly>
+                
+                        <button type="button" onclick="calcularMontoTotal()">Calcular Monto Total</button>
+                        <button type="submit" name="accion" value="realizarCompra">Realizar Compra</button>
+                    </div>        
+                </form>
+            </div>
+        </section>
+    </div>
+    <!-- sección - footer  -->
+
+    <div class="container">
+
+        <section class="footer">
+
+            <div class="box-container">
+        
+                <div class="box">
+                    <h3>locaciones:</h3>
+                    <a href="#">almagro</a>
+                    <a href="#">belgrano</a>
+                    <a href="#">caballito</a>
+
+                </div>
+        
+                <div class="box">
+                    <h3>acceso directo</h3>
+                    <a href="#inicio">inicio</a>
+                    <a href="#destacada">destacada</a>
+                    <a href="#nosotros">nosotros</a>
+                    <a href="#catalogo">catálogo</a>
+                    <a href="#staff">staff</a>
+                    <a href="#carrito">pedido</a>
+                </div>
+        
+                <div class="box">
+                    <h3>información de contacto</h3>
+                    <a href="#">+54 11 234 5678</a>
+                    <a href="#">bairescakes@gmail.com</a>
+                    <a href="#">argentina, buenos aires - av. messi 123</a>
+                </div>
+        
+                <div class="box">
+                    <h3>nuestras</h3>
+                    <a href="#">instagram</a>
+                    <a href="#">facebook</a>
+                    <a href="#">linkedin</a>
+                </div>
+        
+            </div>
+        
+            <div class="credit">copyright @ 2023 ><span>codo a codo - fullstack java - comisión 23566 - grupo 10 
+                <br>
+                (Daniela Ailin Gañan, Gonzalo Mendez, Pablo Nicolás Tanno & Pilar Quinteros)</span> </div>
+        
+        </section>
+    </div>
+
+    <!-- link de javascript  -->
+    <script src="./js/script.js"></script>  
+    
+</body>
 </html>

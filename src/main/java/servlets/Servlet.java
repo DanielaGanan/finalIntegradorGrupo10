@@ -52,7 +52,7 @@ public class Servlet extends HttpServlet {
                 if (usuarios.getUsuario() != null) {
                     request.setAttribute("usuario", usuarios);
                     // agregar una condicion de que quiero que pase una vez que me value el usuario
-                    request.getRequestDispatcher("formulario.html").forward(request, response);
+                    request.getRequestDispatcher("index.html").forward(request, response);
                 } else {
                     request.getRequestDispatcher("index.html").forward(request, response);
                 }
